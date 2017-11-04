@@ -16,6 +16,8 @@
 
 //TASK 4
 //Include an output of how many empties/caps are remaining
+//Works
+
 var args = process.argv;
 var initialInvestment = Array.from(args[2]);
 
@@ -33,6 +35,7 @@ function totalNumberOfBottles(investment) {
     if (caps < 4) {
       return;
     }
+    // This code works for doing as many conversions as possible, instead of a single convertion each time the function is called which is how the function runs with the later code that was used as it was simpler.
     // var capsToConvert = caps - (caps % 4);
     // var newBottles = (capsToConvert / 4)
     // currentCaps -= capsToConvert;
@@ -40,18 +43,19 @@ function totalNumberOfBottles(investment) {
     // currentBottles += newBottles;
     // totalBottles += newBottles;
 
+    // We want to reduce the cap count by 4 because of the exchange, which will produce 1 more bottle and increase the empty and cap value by 1
     currentCaps -= 4;
     currentCaps++;
     currentBottles++;
     totalBottles++;
     bottlesFromCaps++;
-    // console.log("Added another bottle using caps, total: " + totalBottles);
-}
+  }
 
    var convertEmptiesToMoreBottles = function (empties) {
     if (empties < 2) {
       return;
     }
+    // This code works for doing as many conversions as possible, instead of a single convertion each time the function is called which is how the function runs with the later code that was used as it was simpler.
     // var emptiesToConvert = empties - (empties % 2);
     // var newBottles = (emptiesToConvert / 2)
     // currentBottles -= emptiesToConvert;
@@ -59,12 +63,12 @@ function totalNumberOfBottles(investment) {
     // currentCaps += newBottles;
     // totalBottles += newBottles;
 
+    // We want to reduce the empty count by 4 because of the exchange, which will produce 1 more bottle and increase the empty and cap value by 1
     currentBottles -= 2;
     currentCaps++;
     currentBottles++;
     totalBottles++;
     bottlesFromEmpties++;
-    // console.log("Added another bottle using empties, total: " + totalBottles);
 
   }
 
